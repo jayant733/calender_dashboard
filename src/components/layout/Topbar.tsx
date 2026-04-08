@@ -9,14 +9,14 @@ function TopbarComponent() {
 
   return (
     <header
-      className={`fixed left-0 right-0 top-0 z-30 border-b px-4 py-4 backdrop-blur-xl sm:px-6 lg:left-[288px] lg:px-8 ${
+      className={`sticky top-0 z-30 border-b px-4 py-4 backdrop-blur-xl sm:px-6 lg:px-8 ${
         themeMode === 'dark'
           ? 'border-emerald-900/50 bg-[#071113]/80'
           : 'border-white/60 bg-white/88'
       }`}
     >
-      <div className="flex items-center justify-between gap-4">
-        <div className="flex items-center gap-3">
+      <div className="flex items-center justify-between gap-3 lg:gap-4">
+        <div className="flex min-w-0 flex-1 items-center gap-3">
           <button
             type="button"
             className={`inline-flex h-11 w-11 items-center justify-center rounded-2xl border lg:hidden ${
@@ -29,7 +29,7 @@ function TopbarComponent() {
             <Menu className="h-5 w-5" />
           </button>
           <p
-            className={`font-headline text-xl font-extrabold tracking-tight sm:text-3xl ${
+            className={`truncate font-headline text-xl font-extrabold tracking-tight sm:text-2xl xl:text-3xl ${
               themeMode === 'dark' ? 'text-[#41d9b3]' : 'text-[#006193]'
             }`}
           >
@@ -37,9 +37,9 @@ function TopbarComponent() {
           </p>
         </div>
 
-        <div className="flex items-center gap-3 sm:gap-4">
+        <div className="flex shrink-0 items-center gap-2 sm:gap-3 lg:gap-4">
           <label
-            className={`hidden items-center gap-3 rounded-full px-4 py-2 text-sm shadow-inner transition duration-200 focus-within:scale-[1.02] focus-within:shadow-md sm:flex ${
+            className={`hidden items-center gap-3 rounded-full px-3 py-2 text-sm shadow-inner transition duration-200 focus-within:scale-[1.02] focus-within:shadow-md md:flex lg:px-4 ${
               themeMode === 'dark'
                 ? 'bg-emerald-950/70 text-emerald-200'
                 : 'bg-slate-100 text-slate-500'
@@ -50,7 +50,7 @@ function TopbarComponent() {
               value={globalSearchQuery}
               onChange={(event) => setGlobalSearchQuery(event.target.value)}
               placeholder="Search events..."
-              className="w-48 bg-transparent outline-none transition-[width] duration-200 xl:w-64 focus:w-56 xl:focus:w-72"
+              className="w-32 bg-transparent outline-none transition-[width] duration-200 lg:w-40 xl:w-56 focus:w-40 lg:focus:w-48 xl:focus:w-64"
             />
           </label>
           <motion.button

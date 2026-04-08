@@ -49,7 +49,7 @@ export function AppLayout() {
           ) : null}
         </AnimatePresence>
         <Sidebar />
-        <main className="min-w-0 flex-1 pb-20 pt-[84px] lg:pb-0">
+        <main className="min-w-0 flex-1 pb-20 lg:pb-0">
           <Topbar />
           <div className="px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
             {notesApi.error ? <ErrorBanner error={notesApi.error} onDismiss={notesApi.clearError} /> : null}
